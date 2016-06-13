@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: yellow;
+		}
+		/** CSS3 箭头效果 **/
+		.caret {
+			width: 0;
+			height: 0;
+			border-top: 40px solid;
+			border-right: 40px solid transparent;
+			border-left: 40px solid transparent;
+		}
+	</style>
+</head>
+<body>
+	<div id='caret' class="caret"></div>
+	<script type="text/javascript">
+		var caret = document.getElementById('caret');
+		caret.innerHTML = '<p>asdfsdfsdf\rsdfasdfasdf\rasdfsadfsdf</p>';;
+	</script>
+</body>
+</html>
