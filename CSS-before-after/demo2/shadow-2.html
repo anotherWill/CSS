@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {background: #eee;}
+		div, section {display: block;}
+
+		.container {
+			width: 900px;
+			margin: 30px auto;
+			padding: 25px;
+			min-height: 400px;
+			height: auto;
+		}
+		.box {
+			width: 70%;
+			height: 200px;
+			background-color: #fff;
+			margin: 40px auto;
+		}
+		.effect1 {
+			box-shadow: 0 10px 6px -6px #777;
+		}
+		.effect2 {position: relative;}
+		.effect2::before, .effect2::after {
+			z-index: -1;
+			position: absolute;
+			content: "";
+			bottom: 15px;
+			left: 10px;
+			width: 50%;
+			top: 80%;
+			max-width: 800px;
+			background: #777;
+			box-shadow: 0 15px 10px #777;
+			transform: rotate(-3deg);
+		}
+		.effect2::after {
+			transform: rotate(3deg);
+			right: 10px;
+			left: auto;
+		}
+		.effect3, .effect4 {
+			position: relative;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, .3), 0 0 40px rgba(0, 0, 0, .1) inset;
+		}
+		.effect3::before, .effect3::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+			top: 0;
+			bottom: 0;
+			left: 10px;
+			right: 10px;
+			border-radius: 100px/10px;
+		}
+		.effect3::after {
+			right: 10px;
+			left: auto;
+			transform: skew(8deg) rotate(3deg);
+		}
+		.effect4::before, .effect4::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			box-shadow: 0 0 19px rgba(0, 0, 0, .8);
+			top: 10px;
+			bottom: 10px;
+			left: 0;
+			right: 0;
+			border-radius: 100px/10px;
+		}
+		.effect4::after {
+			right: 10px;
+			left: auto;
+			transform: skew(8deg) rotate(3deg);
+		}
+	</style>
+</head>
+<body>
+	<section class="container">
+		<div class="box effect1"></div>
+		<div class="box effect2"></div>
+		<div class="box effect3"></div>
+		<div class="box effect4"></div>
+	</section>
+</body>
+</html>
