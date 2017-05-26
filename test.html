@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<style type="text/css">
+		body {
+			overflow: hidden;
+		}
+		div,html,body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			
+		}
+		section {
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<section style="background: #00ff00;"></section>
+		<section style="background: #0000ff;"></section>
+		<section style="background: #00ffff;"></section>
+		<section style="background: #ff00ff;"></section>
+	</div>
+
+	<script type="text/javascript">
+		(function() {
+			var h = $(window).height();
+			setTimeout(function() {
+				$('div').css({
+					'transform': 'translate(0,-' + h +'px)',
+					'transition': 'all 700ms ease'
+				})
+			}, 2000)
+
+			setTimeout(function() {
+							$('div').css({
+								'transform': 'translate(0,-' + h*2 +'px)',
+								'transition': 'all 700ms ease'
+							})
+						}, 4000)
+
+			setTimeout(function() {
+							$('div').css({
+								'transform': 'translate(0,-' + h*3 +'px)',
+								'transition': 'all 700ms ease'
+							})
+						}, 6000)
+
+			setTimeout(function() {
+							$('div').css({
+								'transform': 'translate(0,-' + h*4 +'px)',
+								'transition': 'all 700ms ease'
+							})
+						}, 8000)
+					}())
+	</script>
+</body>
+</html>
