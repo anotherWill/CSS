@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <style type="text/css">
+      .slider {
+        width: 200px;
+        overflow: hidden;
+        position: absolute;
+        left: 100px;
+        top: 40px;
+        font-size: 0;
+      }
+      .slide-wrapper {
+        position: relative;
+        width: 500%;
+      }
+      .slide {
+        width: 20%;
+        display: inline-block;
+      }
+      img {
+        border: 0;
+        width: 200px;
+        height: 400px;
+        display: inline-block;
+      }
+  </style>
+</head>
+<body>
+
+<div class="slider">
+    <div class="slide-wrapper">
+      <div class="slide"><img src="1.jpg" alt=""></div>
+      <div class="slide"><img src="2.jpg" alt=""></div>
+      <div class="slide"><img src="3.jpg" alt=""></div>
+      <div class="slide"><img src="4.jpg" alt=""></div>
+    </div>
+</div>
+<script type="text/javascript">
+    //初始化
+    var index = 0;
+    var number = $('.slide-wrapper .slide').length;
+    $('.slide-wrapper').append($('.slide-wrapper .slide').first().clone());
+    //自动轮播
+    var autoPlay=setInterval(function(){
+        index++;
+        move()
+    },1500);
+    //轮播
+    function move(){
+        if(index > number){
+            // 复位
+            $('.slide-wrapper').css({left:0});
+            index = 1
+        }
+        $(".slide-wrapper")
+          .stop()
+          .animate({
+            left: -(200*index)
+          });
+    }
+</script>
+</body>
+</html>
